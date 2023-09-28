@@ -45,6 +45,7 @@ public class PlayerController : MonoBehaviour
         _canvas.Find("GameOverText").GetComponent<Text>().text = "Score: " + _score;
         _score = 0;
         gameObject.SetActive(false);
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
