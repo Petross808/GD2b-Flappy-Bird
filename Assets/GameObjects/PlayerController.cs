@@ -9,12 +9,14 @@ public class PlayerController : MonoBehaviour
     private Transform _canvas;
     private Rigidbody2D _rb;
     private int _score;
+    private Animator _anim;
 
     // Start is called before the first frame update
     void Start()
     {
         _canvas = GameObject.FindGameObjectWithTag("Canvas").transform;
         _rb = GetComponent<Rigidbody2D>();
+        _anim = GetComponent<Animator>();
         PlayerInput input = GetComponent<PlayerInput>();
         input.actions["Jump"].started += Jump;
         _score = 0;
@@ -23,6 +25,8 @@ public class PlayerController : MonoBehaviour
     void Jump(InputAction.CallbackContext context)
     {
         _rb.velocityY = 5;
+        _anim.ResetTrigger("Flap");
+        _anim.SetTrigger("Flap");
 
     }
 

@@ -22,7 +22,7 @@ public class PipeSpawnerScript : MonoBehaviour
         }
         else
         {
-            float offset = Random.Range(-3.5f, 3.5f);
+            float offset = Random.Range(-3f, 3.5f);
             Instantiate(pipe, new Vector3(transform.position.x, offset, 1), new(0,0,0,0));
             _timer = 2;
         }
